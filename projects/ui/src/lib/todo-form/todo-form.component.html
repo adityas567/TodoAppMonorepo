@@ -1,0 +1,19 @@
+<div class="d-flex gap-2 mb-4">
+  <mat-form-field appearance="outline" class="flex-grow-1">
+    <mat-label>{{ 'ADD_PLACEHOLDER' | translate }}</mat-label>
+    <input
+      matInput
+      [formControl]="taskControl"
+      (keydown.enter)="submit()"
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="submit()"
+    [disabled]="taskControl.invalid"
+    style="height: 56px;margin-top: 5px;">
+    {{ 'ADD_BTN' | translate }}
+  </button>
+</div>

@@ -1,0 +1,18 @@
+<!-- Empty state -->
+<div *ngIf="todos.length === 0" class="text-center text-muted py-5">
+  <mat-icon style="font-size: 3rem; width: 3rem; height: 3rem;">
+    inbox
+  </mat-icon>
+  <p class="mt-2">{{ 'EMPTY_STATE' | translate }}</p>
+</div>
+
+<!-- List -->
+<mat-list *ngIf="todos.length > 0">
+  <app-todo-item
+    *ngFor="let todo of todos; trackBy: trackById"
+    [todo]="todo"
+    (toggle)="toggle.emit($event)"
+    (edit)="edit.emit($event)"
+    (delete)="delete.emit($event)">
+  </app-todo-item>
+</mat-list>

@@ -1,0 +1,50 @@
+<mat-list-item class="border-bottom">
+  <div class="d-flex align-items-center gap-3 w-100 py-2">
+
+    <!-- Checkbox -->
+    <mat-checkbox
+      [checked]="todo.completed"
+      (change)="toggle.emit(todo.id)"
+      color="primary">
+    </mat-checkbox>
+
+    <!-- VIEW MODE -->
+    <ng-container *ngIf="!isEditing">
+      <span
+        class="flex-grow-1"
+        [class.text-decoration-line-through]="todo.completed"
+        [class.text-muted]="todo.completed">
+        {{ todo.text }}
+      </span>
+
+      <button mat-icon-button (click)="startEdit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn" (click)="delete.emit(todo.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </ng-container>
+
+    <!-- EDIT MODE -->
+    <ng-container *ngIf="isEditing">
+      <mat-form-field appearance="outline" class="flex-grow-1 edit-field">
+        <input
+          matInput
+          [formControl]="editControl"
+          (keydown.enter)="saveEdit()"
+          (keydown.escape)="cancelEdit()"
+        />
+      </mat-form-field>
+
+      <button mat-icon-button color="primary" (click)="saveEdit()">
+        <mat-icon>check</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="cancelEdit()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </ng-container>
+
+  </div>
+</mat-list-item>

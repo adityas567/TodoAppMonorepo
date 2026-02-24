@@ -1,0 +1,15 @@
+{
+  "APP_TITLE": "Task planner",
+  "ADD_PLACEHOLDER": "Add a new task...",
+  "ADD_BTN": "Add Task",
+  "TAB_ALL": "All",
+  "TAB_PENDING": "Pending",
+  "TAB_DONE": "Done",
+  "STAT_TOTAL": "Total",
+  "STAT_DONE": "Completed",
+  "STAT_PENDING": "Pending",
+  "EMPTY_STATE": "No tasks yet. Add one above!",
+  "EMPTY_PENDING": "No pending tasks. All done!",
+  "EMPTY_DONE": "Nothing completed yet.",
+  "LANG_LABEL": "Language"
+}

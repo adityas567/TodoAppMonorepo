@@ -16,6 +16,17 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "shared": [
+        "projects/shared/src/public-api.ts"
+      ],
+      "data-access": [
+        "projects/data-access/src/public-api.ts"
+      ],
+      "ui": [
+        "projects/ui/src/public-api.ts"
+      ]
+    },
     "target": "es2020",
     "module": "es2020",
     "lib": [

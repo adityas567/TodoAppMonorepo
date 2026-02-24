@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>{{ 'APP_TITLE' | translate }}</span>
+  <span class="spacer"></span>
+  <mat-button-toggle-group
+    [value]="currentLang"
+    (change)="switchLanguage($event.value)">
+    <mat-button-toggle
+      *ngFor="let lang of languages"
+      [value]="lang">
+      {{ lang.toUpperCase() }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-toolbar>
+
+<app-login-form
+  [error]="(error$ | async) ?? null"
+  (submitLogin)="onLogin($any($event))">
+</app-login-form>

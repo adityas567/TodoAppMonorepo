@@ -1,0 +1,8 @@
+{
+  "APP_TITLE": "Task Planner",
+  "LOGIN_TITLE": "Bon Retour",
+  "USERNAME": "Nom d'utilisateur",
+  "PASSWORD": "Mot de passe",
+  "LOGIN_BTN": "Connexion",
+  "LOGIN_HINT": "Utilisez admin / admin123 ou user / user123"
+}

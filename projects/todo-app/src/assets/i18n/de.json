@@ -1,0 +1,15 @@
+{
+  "APP_TITLE": "Task planner",
+  "ADD_PLACEHOLDER": "Neue Aufgabe hinzufügen...",
+  "ADD_BTN": "Hinzufügen",
+  "TAB_ALL": "Alle",
+  "TAB_PENDING": "Offen",
+  "TAB_DONE": "Erledigt",
+  "STAT_TOTAL": "Gesamt",
+  "STAT_DONE": "Erledigt",
+  "STAT_PENDING": "Offen",
+  "EMPTY_STATE": "Keine Aufgaben. Fügen Sie eine hinzu!",
+  "EMPTY_PENDING": "Keine offenen Aufgaben!",
+  "EMPTY_DONE": "Noch nichts erledigt.",
+  "LANG_LABEL": "Sprache"
+}

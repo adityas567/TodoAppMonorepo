@@ -1,0 +1,54 @@
+<mat-toolbar color="primary">
+  <span>{{ 'APP_TITLE' | translate }}</span>
+  <span class="spacer"></span>
+  <mat-button-toggle-group
+    [value]="currentLang"
+    (change)="switchLanguage($event.value)">
+    <mat-button-toggle *ngFor="let lang of languages" [value]="lang">
+      {{ lang.toUpperCase() }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  <button mat-icon-button (click)="logout()" class="ms-2" title="Logout">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container py-4" style="max-width: 680px;">
+  <div class="d-flex gap-2 mb-4" *ngIf="stats$ | async as stats">
+    <mat-chip-list>
+      <mat-chip color="primary" selected>
+        {{ stats.total }} {{ 'STAT_TOTAL' | translate }}
+      </mat-chip>
+      <mat-chip color="accent" selected>
+        {{ stats.completed }} {{ 'STAT_DONE' | translate }}
+      </mat-chip>
+      <mat-chip>
+        {{ stats.pending }} {{ 'STAT_PENDING' | translate }}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+
+  <app-todo-form (addTodo)="onAddTodo($event)"></app-todo-form>
+
+  <mat-button-toggle-group
+    [value]="activeFilter"
+    class="mb-3 w-100"
+    (change)="setFilter($event.value)">
+    <mat-button-toggle value="all" class="flex-grow-1">
+      {{ 'TAB_ALL' | translate }}
+    </mat-button-toggle>
+    <mat-button-toggle value="pending" class="flex-grow-1">
+      {{ 'TAB_PENDING' | translate }}
+    </mat-button-toggle>
+    <mat-button-toggle value="done" class="flex-grow-1">
+      {{ 'TAB_DONE' | translate }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <app-todo-list
+    [todos]="(todos$ | async) || []"
+    (toggle)="onToggle($event)"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)">
+  </app-todo-list>
+</div>
